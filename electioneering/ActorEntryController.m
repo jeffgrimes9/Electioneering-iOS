@@ -15,8 +15,9 @@ static const int labelRightTag = 1002;
 
 @interface ActorEntryController ()
 
-@property (nonatomic, assign) BOOL actorEnteredLeft;
-@property (nonatomic, assign) BOOL actorEnteredRight;
+@property (nonatomic, assign) BOOL actorLeftIsValid;
+@property (nonatomic, assign) BOOL actorRightIsValid;
+@property (nonatomic, retain) NSString *predictedString;
 
 @end
 
@@ -39,6 +40,30 @@ static const int labelRightTag = 1002;
     [logo release];
 }
 
+- (NSString *)textField:(DOAutocompleteTextField *)textField completionForPrefix:(NSString *)prefix {
+    NSArray *autocompleteArray = [NSArray arrayWithObjects:
+                                  @"Barack Obama",
+                                  @"Mitt Romney",
+                                  @"Chris Christie",
+                                  @"Marco Rubio",
+                                  @"Paul Ryan",
+                                  @"Joe Biden",
+                                  @"Bobby Jindal",
+                                  nil];
+    
+    for (NSString *string in autocompleteArray) {
+        if ([string hasPrefix:prefix]) {
+            NSString *autocompleteString = [string stringByReplacingCharactersInRange:[prefix rangeOfString:prefix] withString:@""];
+            self.predictedString = autocompleteString;
+            return autocompleteString;
+        }
+        
+    }
+    
+    return @"";
+}
+
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     NSString *actorEntryLeft = self.textFieldLeft.text;
     NSString *actorEntryRight = self.textFieldRight.text;
@@ -52,10 +77,25 @@ static const int labelRightTag = 1002;
     }
     
     if ([string isEqualToString:@"\n"]) {
+        if ([textField.text isEqualToString:@""]) {
+            return NO;
+        }
         if (textField.tag == labelLeftTag) {
+            NSLog(@"value is %@", self.textFieldLeft.text);
+            // check if the value after user presses enter is one of the names in our database
+            self.textFieldLeft.text = [self.textFieldLeft.text stringByAppendingString:self.predictedString];
+            
+            NSString *actorEntryLeft = self.textFieldLeft.text;
+            [[LocalActors sharedInstance] setActorOne:actorEntryLeft];
+            
             [self.textFieldLeft resignFirstResponder];
             [self.textFieldRight becomeFirstResponder];
-        } else {
+        } else if (self.textFieldRight.text) {
+            self.textFieldRight.text = [self.textFieldRight.text stringByAppendingString:self.predictedString];
+            
+            NSString *actorEntryRight = self.textFieldRight.text;
+            [[LocalActors sharedInstance] setActorTwo:actorEntryRight];
+            
             [self.textFieldRight resignFirstResponder];
         }
         return NO;
