@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		018BE50D16040AD2006DDB46 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018BE50C16040AD2006DDB46 /* UIKit.framework */; };
+		018BE50F16040AD2006DDB46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018BE50E16040AD2006DDB46 /* Foundation.framework */; };
+		018BE51116040AD2006DDB46 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018BE51016040AD2006DDB46 /* CoreGraphics.framework */; };
+		018BE51716040AD2006DDB46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 018BE51516040AD2006DDB46 /* InfoPlist.strings */; };
+		018BE51916040AD2006DDB46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BE51816040AD2006DDB46 /* main.m */; };
+		018BE51D16040AD2006DDB46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BE51C16040AD2006DDB46 /* AppDelegate.m */; };
+		018BE52016040AD2006DDB46 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 018BE51E16040AD2006DDB46 /* MainStoryboard.storyboard */; };
+		018BE52316040AD2006DDB46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BE52216040AD2006DDB46 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		018BE50816040AD2006DDB46 /* electioneering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = electioneering.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		018BE50C16040AD2006DDB46 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		018BE50E16040AD2006DDB46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		018BE51016040AD2006DDB46 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		018BE51416040AD2006DDB46 /* electioneering-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "electioneering-Info.plist"; sourceTree = "<group>"; };
+		018BE51616040AD2006DDB46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		018BE51816040AD2006DDB46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		018BE51A16040AD2006DDB46 /* electioneering-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "electioneering-Prefix.pch"; sourceTree = "<group>"; };
+		018BE51B16040AD2006DDB46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		018BE51C16040AD2006DDB46 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		018BE51F16040AD2006DDB46 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		018BE52116040AD2006DDB46 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		018BE52216040AD2006DDB46 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		018BE50516040AD2006DDB46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				018BE50D16040AD2006DDB46 /* UIKit.framework in Frameworks */,
+				018BE50F16040AD2006DDB46 /* Foundation.framework in Frameworks */,
+				018BE51116040AD2006DDB46 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		018BE4FD16040AD2006DDB46 = {
+			isa = PBXGroup;
+			children = (
+				018BE51216040AD2006DDB46 /* electioneering */,
+				018BE50B16040AD2006DDB46 /* Frameworks */,
+				018BE50916040AD2006DDB46 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		018BE50916040AD2006DDB46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				018BE50816040AD2006DDB46 /* electioneering.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		018BE50B16040AD2006DDB46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				018BE50C16040AD2006DDB46 /* UIKit.framework */,
+				018BE50E16040AD2006DDB46 /* Foundation.framework */,
+				018BE51016040AD2006DDB46 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		018BE51216040AD2006DDB46 /* electioneering */ = {
+			isa = PBXGroup;
+			children = (
+				018BE51B16040AD2006DDB46 /* AppDelegate.h */,
+				018BE51C16040AD2006DDB46 /* AppDelegate.m */,
+				018BE51E16040AD2006DDB46 /* MainStoryboard.storyboard */,
+				018BE52116040AD2006DDB46 /* ViewController.h */,
+				018BE52216040AD2006DDB46 /* ViewController.m */,
+				018BE51316040AD2006DDB46 /* Supporting Files */,
+			);
+			path = electioneering;
+			sourceTree = "<group>";
+		};
+		018BE51316040AD2006DDB46 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				018BE51416040AD2006DDB46 /* electioneering-Info.plist */,
+				018BE51516040AD2006DDB46 /* InfoPlist.strings */,
+				018BE51816040AD2006DDB46 /* main.m */,
+				018BE51A16040AD2006DDB46 /* electioneering-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		018BE50716040AD2006DDB46 /* electioneering */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 018BE52616040AD2006DDB46 /* Build configuration list for PBXNativeTarget "electioneering" */;
+			buildPhases = (
+				018BE50416040AD2006DDB46 /* Sources */,
+				018BE50516040AD2006DDB46 /* Frameworks */,
+				018BE50616040AD2006DDB46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = electioneering;
+			productName = electioneering;
+			productReference = 018BE50816040AD2006DDB46 /* electioneering.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		018BE4FF16040AD2006DDB46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Jeff Grimes";
+			};
+			buildConfigurationList = 018BE50216040AD2006DDB46 /* Build configuration list for PBXProject "electioneering" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 018BE4FD16040AD2006DDB46;
+			productRefGroup = 018BE50916040AD2006DDB46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				018BE50716040AD2006DDB46 /* electioneering */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		018BE50616040AD2006DDB46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				018BE51716040AD2006DDB46 /* InfoPlist.strings in Resources */,
+				018BE52016040AD2006DDB46 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		018BE50416040AD2006DDB46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				018BE51916040AD2006DDB46 /* main.m in Sources */,
+				018BE51D16040AD2006DDB46 /* AppDelegate.m in Sources */,
+				018BE52316040AD2006DDB46 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		018BE51516040AD2006DDB46 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				018BE51616040AD2006DDB46 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		018BE51E16040AD2006DDB46 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				018BE51F16040AD2006DDB46 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		018BE52416040AD2006DDB46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		018BE52516040AD2006DDB46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		018BE52716040AD2006DDB46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "electioneering/electioneering-Prefix.pch";
+				INFOPLIST_FILE = "electioneering/electioneering-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		018BE52816040AD2006DDB46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "electioneering/electioneering-Prefix.pch";
+				INFOPLIST_FILE = "electioneering/electioneering-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		018BE50216040AD2006DDB46 /* Build configuration list for PBXProject "electioneering" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				018BE52416040AD2006DDB46 /* Debug */,
+				018BE52516040AD2006DDB46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		018BE52616040AD2006DDB46 /* Build configuration list for PBXNativeTarget "electioneering" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				018BE52716040AD2006DDB46 /* Debug */,
+				018BE52816040AD2006DDB46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 018BE4FF16040AD2006DDB46 /* Project object */;
+}
