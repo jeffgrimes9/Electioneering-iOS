@@ -64,7 +64,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Sir-Gf-Put" kind="push" id="Z3I-Wt-TkF"/>
+                                    <action selector="compareButtonPressed" destination="2" eventType="touchUpInside" id="4K9-qq-0mG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,7 +90,7 @@
         <scene sceneID="MBH-r9-hGx">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7c-zd-0bM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="Sir-Gf-Put" customClass="ActorDisplayController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="displayView" id="Sir-Gf-Put" customClass="ActorDisplayController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F3l-fE-jCq">
                         <rect key="frame" x="0.0" y="64" width="480" height="256"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -98,34 +98,16 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="9PN-3b-1uU">
                                 <rect key="frame" x="0.0" y="33" width="480" height="223"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="energyblue.png" id="vxQ-Wd-cbN">
-                                        <rect key="frame" x="0.0" y="2" width="480" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="abortiongreen.png" id="h1X-jh-RIc">
-                                        <rect key="frame" x="0.0" y="59" width="480" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="energyblue.png" id="25Y-BW-QOD">
-                                        <rect key="frame" x="0.0" y="116" width="480" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="abortiongreen.png" id="UYf-gI-dUr">
-                                        <rect key="frame" x="0.0" y="173" width="480" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
                             </scrollView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Actor One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="0oY-Ra-uQ1">
-                                <rect key="frame" x="20" y="4" width="211" height="26"/>
+                                <rect key="frame" x="20" y="3" width="211" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Actor Two" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="YkJ-iO-gXg">
-                                <rect key="frame" x="249" y="5" width="211" height="26"/>
+                                <rect key="frame" x="249" y="4" width="211" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -144,12 +126,13 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Electioneering" id="ijU-bF-9aB"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="actorLabelLeft" destination="0oY-Ra-uQ1" id="uo7-dK-LKo"/>
                         <outlet property="actorLabelRight" destination="YkJ-iO-gXg" id="v0k-oz-Ooh"/>
                         <outlet property="scrollView" destination="9PN-3b-1uU" id="mDb-Li-NOL"/>
-                        <outlet property="view" destination="F3l-fE-jCq" id="JMT-BQ-MNa"/>
                     </connections>
                 </viewController>
             </objects>
@@ -157,10 +140,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="abortiongreen.png" width="480" height="55"/>
         <image name="background.png" width="480" height="288"/>
         <image name="compareEnabled.png" width="500" height="247"/>
-        <image name="energyblue.png" width="480" height="55"/>
         <image name="lineHorizontal.png" width="480" height="1"/>
         <image name="lineVertical.png" width="1" height="80"/>
         <image name="vs.png" width="70" height="70"/>
@@ -177,9 +158,10 @@
         <class className="ActorEntryController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ActorEntryController.h"/>
             <relationships>
+                <relationship kind="action" name="compareButtonPressed"/>
                 <relationship kind="outlet" name="compareButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="textFieldLeft" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textFieldRight" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textFieldLeft" candidateClass="DOAutocompleteTextField"/>
+                <relationship kind="outlet" name="textFieldRight" candidateClass="DOAutocompleteTextField"/>
             </relationships>
         </class>
         <class className="DOAutocompleteTextField" superclassName="UITextField">

@@ -30,8 +30,10 @@
     self.scrollView.delegate = self;
     self.scrollView.scrollEnabled = YES;
     [self.scrollView setFrame:CGRectMake(0, 33, self.view.frame.size.width, self.view.frame.size.height)];
-    self.scrollView.contentSize = CGSizeMake(480, 271);
+    self.scrollView.contentSize = CGSizeMake(480, 682); // 682 = 12*55 (cell height) + 11*2 (spacing between cells)
     
+    self.actorLabelLeft.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:21];
+    self.actorLabelRight.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:21];
     self.actorLabelLeft.text = [[LocalActors sharedInstance] actorOne];
     self.actorLabelRight.text = [[LocalActors sharedInstance] actorTwo];
 }

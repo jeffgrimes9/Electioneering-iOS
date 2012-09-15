@@ -8,6 +8,7 @@
 
 #import "ActorEntryController.h"
 #import "LocalActors.h"
+#import "ActorDisplayController.h"
 
 static const int logoTag = 1000;
 static const int labelLeftTag = 1001;
@@ -57,7 +58,6 @@ static const int labelRightTag = 1002;
             self.predictedString = autocompleteString;
             return autocompleteString;
         }
-        
     }
     
     return @"";
@@ -70,9 +70,7 @@ static const int labelRightTag = 1002;
     [[LocalActors sharedInstance] setActorOne:actorEntryLeft];
     [[LocalActors sharedInstance] setActorTwo:actorEntryRight];
     
-    if ([actorEntryLeft isEqualToString:@""] || [actorEntryRight isEqualToString:@""]) {
-        self.compareButton.enabled = NO;
-    } else {
+    if (![self.textFieldLeft.text isEqualToString:@""] && ![self.textFieldRight.text isEqualToString:@""]) {
         self.compareButton.enabled = YES;
     }
     
@@ -82,7 +80,7 @@ static const int labelRightTag = 1002;
         }
         if (textField.tag == labelLeftTag) {
             NSLog(@"value is %@", self.textFieldLeft.text);
-            // check if the value after user presses enter is one of the names in our database
+            
             self.textFieldLeft.text = [self.textFieldLeft.text stringByAppendingString:self.predictedString];
             
             NSString *actorEntryLeft = self.textFieldLeft.text;
@@ -101,8 +99,19 @@ static const int labelRightTag = 1002;
         return NO;
     }
     else {
+        self.predictedString = @"";
         return YES;
     }
+}
+
+- (IBAction)compareButtonPressed {
+    
+    // do this shit ONLY if both names are present in the database (so make api call to get names)
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    ActorDisplayController *actorDisplayController = (ActorDisplayController *)[storyboard instantiateViewControllerWithIdentifier:@"displayView"];
+    [self.navigationController pushViewController:actorDisplayController animated:YES];
+    
 }
 
 - (void)viewDidUnload {

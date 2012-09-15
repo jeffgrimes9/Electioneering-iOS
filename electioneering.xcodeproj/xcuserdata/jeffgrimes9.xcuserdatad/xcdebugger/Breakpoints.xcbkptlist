@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "electioneering/ActorEntryController.m"
-         timestampString = "369413926.413814"
+         timestampString = "369416750.511776"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
          landmarkName = "-textField:completionForPrefix:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,37 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "electioneering/ActorEntryController.m"
-         timestampString = "369415047.429964"
+         timestampString = "369416884.292797"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "84"
-         endingLineNumber = "84"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
+         landmarkName = "-textField:shouldChangeCharactersInRange:replacementString:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "electioneering/ActorEntryController.m"
+         timestampString = "369416750.511776"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "44"
+         endingLineNumber = "44"
+         landmarkName = "-textField:completionForPrefix:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "electioneering/ActorEntryController.m"
+         timestampString = "369416884.292797"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
          landmarkName = "-textField:shouldChangeCharactersInRange:replacementString:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -17,4 +17,6 @@
 @property (nonatomic, retain) NSString *actorNameLeft;
 @property (nonatomic, retain) NSString *actorNameRight;
 
+- (IBAction)compareButtonPressed;
+
 @end
