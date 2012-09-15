@@ -63,6 +63,10 @@ static const int labelRightTag = 1002;
     return @"";
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    textField.text = @"";
+}
+
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     NSString *actorEntryLeft = self.textFieldLeft.text;
