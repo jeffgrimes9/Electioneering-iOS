@@ -14,7 +14,18 @@
 		018BE51916040AD2006DDB46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BE51816040AD2006DDB46 /* main.m */; };
 		018BE51D16040AD2006DDB46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BE51C16040AD2006DDB46 /* AppDelegate.m */; };
 		018BE52016040AD2006DDB46 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 018BE51E16040AD2006DDB46 /* MainStoryboard.storyboard */; };
-		018BE52316040AD2006DDB46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BE52216040AD2006DDB46 /* ViewController.m */; };
+		018BE52316040AD2006DDB46 /* ActorEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BE52216040AD2006DDB46 /* ActorEntryController.m */; };
+		018BE52F160415C8006DDB46 /* ElectioneeringAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BE52E160415C8006DDB46 /* ElectioneeringAPI.m */; };
+		018BE53A16041C09006DDB46 /* ActorDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BE53916041C08006DDB46 /* ActorDisplayController.m */; };
+		018BE54516043531006DDB46 /* LocalActors.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BE54416043531006DDB46 /* LocalActors.m */; };
+		018BE54916043B8C006DDB46 /* compareDisabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 018BE54616043B8C006DDB46 /* compareDisabled.png */; };
+		018BE54A16043B8C006DDB46 /* compareEnabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 018BE54716043B8C006DDB46 /* compareEnabled.png */; };
+		018BE54B16043B8C006DDB46 /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 018BE54816043B8C006DDB46 /* header.png */; };
+		018BE54F16044048006DDB46 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 018BE54E16044048006DDB46 /* background.png */; };
+		018BE5511604439A006DDB46 /* vs.png in Resources */ = {isa = PBXBuildFile; fileRef = 018BE5501604439A006DDB46 /* vs.png */; };
+		018BE554160456A7006DDB46 /* lineHorizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 018BE552160456A7006DDB46 /* lineHorizontal.png */; };
+		018BE555160456A7006DDB46 /* lineVertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 018BE553160456A7006DDB46 /* lineVertical.png */; };
+		018BE55716045F96006DDB46 /* specialinterestblue.png in Resources */ = {isa = PBXBuildFile; fileRef = 018BE55616045F96006DDB46 /* specialinterestblue.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +40,22 @@
 		018BE51B16040AD2006DDB46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		018BE51C16040AD2006DDB46 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		018BE51F16040AD2006DDB46 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		018BE52116040AD2006DDB46 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		018BE52216040AD2006DDB46 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		018BE52216040AD2006DDB46 /* ActorEntryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActorEntryController.m; sourceTree = "<group>"; };
+		018BE52D160415C8006DDB46 /* ElectioneeringAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectioneeringAPI.h; sourceTree = "<group>"; };
+		018BE52E160415C8006DDB46 /* ElectioneeringAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectioneeringAPI.m; sourceTree = "<group>"; };
+		018BE53316041B35006DDB46 /* ActorEntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorEntryController.h; sourceTree = "<group>"; };
+		018BE53816041C08006DDB46 /* ActorDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorDisplayController.h; sourceTree = "<group>"; };
+		018BE53916041C08006DDB46 /* ActorDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActorDisplayController.m; sourceTree = "<group>"; };
+		018BE54316043531006DDB46 /* LocalActors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalActors.h; sourceTree = "<group>"; };
+		018BE54416043531006DDB46 /* LocalActors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalActors.m; sourceTree = "<group>"; };
+		018BE54616043B8C006DDB46 /* compareDisabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compareDisabled.png; sourceTree = "<group>"; };
+		018BE54716043B8C006DDB46 /* compareEnabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compareEnabled.png; sourceTree = "<group>"; };
+		018BE54816043B8C006DDB46 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
+		018BE54E16044048006DDB46 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		018BE5501604439A006DDB46 /* vs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vs.png; sourceTree = "<group>"; };
+		018BE552160456A7006DDB46 /* lineHorizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineHorizontal.png; sourceTree = "<group>"; };
+		018BE553160456A7006DDB46 /* lineVertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineVertical.png; sourceTree = "<group>"; };
+		018BE55616045F96006DDB46 /* specialinterestblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = specialinterestblue.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +104,11 @@
 			children = (
 				018BE51B16040AD2006DDB46 /* AppDelegate.h */,
 				018BE51C16040AD2006DDB46 /* AppDelegate.m */,
+				018BE54316043531006DDB46 /* LocalActors.h */,
+				018BE54416043531006DDB46 /* LocalActors.m */,
 				018BE51E16040AD2006DDB46 /* MainStoryboard.storyboard */,
-				018BE52116040AD2006DDB46 /* ViewController.h */,
-				018BE52216040AD2006DDB46 /* ViewController.m */,
+				018BE53716041B9B006DDB46 /* Controllers */,
+				018BE53016041823006DDB46 /* Resources */,
 				018BE51316040AD2006DDB46 /* Supporting Files */,
 			);
 			path = electioneering;
@@ -96,6 +123,34 @@
 				018BE51A16040AD2006DDB46 /* electioneering-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		018BE53016041823006DDB46 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				018BE55616045F96006DDB46 /* specialinterestblue.png */,
+				018BE552160456A7006DDB46 /* lineHorizontal.png */,
+				018BE553160456A7006DDB46 /* lineVertical.png */,
+				018BE5501604439A006DDB46 /* vs.png */,
+				018BE54E16044048006DDB46 /* background.png */,
+				018BE54616043B8C006DDB46 /* compareDisabled.png */,
+				018BE54716043B8C006DDB46 /* compareEnabled.png */,
+				018BE54816043B8C006DDB46 /* header.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		018BE53716041B9B006DDB46 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				018BE53316041B35006DDB46 /* ActorEntryController.h */,
+				018BE52216040AD2006DDB46 /* ActorEntryController.m */,
+				018BE53816041C08006DDB46 /* ActorDisplayController.h */,
+				018BE53916041C08006DDB46 /* ActorDisplayController.m */,
+				018BE52D160415C8006DDB46 /* ElectioneeringAPI.h */,
+				018BE52E160415C8006DDB46 /* ElectioneeringAPI.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +206,14 @@
 			files = (
 				018BE51716040AD2006DDB46 /* InfoPlist.strings in Resources */,
 				018BE52016040AD2006DDB46 /* MainStoryboard.storyboard in Resources */,
+				018BE54916043B8C006DDB46 /* compareDisabled.png in Resources */,
+				018BE54A16043B8C006DDB46 /* compareEnabled.png in Resources */,
+				018BE54B16043B8C006DDB46 /* header.png in Resources */,
+				018BE54F16044048006DDB46 /* background.png in Resources */,
+				018BE5511604439A006DDB46 /* vs.png in Resources */,
+				018BE554160456A7006DDB46 /* lineHorizontal.png in Resources */,
+				018BE555160456A7006DDB46 /* lineVertical.png in Resources */,
+				018BE55716045F96006DDB46 /* specialinterestblue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +226,10 @@
 			files = (
 				018BE51916040AD2006DDB46 /* main.m in Sources */,
 				018BE51D16040AD2006DDB46 /* AppDelegate.m in Sources */,
-				018BE52316040AD2006DDB46 /* ViewController.m in Sources */,
+				018BE52316040AD2006DDB46 /* ActorEntryController.m in Sources */,
+				018BE52F160415C8006DDB46 /* ElectioneeringAPI.m in Sources */,
+				018BE53A16041C09006DDB46 /* ActorDisplayController.m in Sources */,
+				018BE54516043531006DDB46 /* LocalActors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
