@@ -7,7 +7,7 @@
 //
 
 #import "ActorEntryController.h"
-#import "LocalActors.h"
+#import "LocalData.h"
 #import "ActorDisplayController.h"
 
 static const int logoTag = 1000;
@@ -71,8 +71,8 @@ static const int labelRightTag = 1002;
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     NSString *actorEntryLeft = self.textFieldLeft.text;
     NSString *actorEntryRight = self.textFieldRight.text;
-    [[LocalActors sharedInstance] setActorOne:actorEntryLeft];
-    [[LocalActors sharedInstance] setActorTwo:actorEntryRight];
+    [[LocalData sharedInstance] setLocalActorOne:actorEntryLeft];
+    [[LocalData sharedInstance] setLocalActorTwo:actorEntryRight];
     
     if (![self.textFieldLeft.text isEqualToString:@""] && ![self.textFieldRight.text isEqualToString:@""]) {
         self.compareButton.enabled = YES;
@@ -82,13 +82,11 @@ static const int labelRightTag = 1002;
         if ([textField.text isEqualToString:@""]) {
             return NO;
         }
-        if (textField.tag == labelLeftTag) {
-            NSLog(@"value is %@", self.textFieldLeft.text);
-            
+        if (textField.tag == labelLeftTag) {            
             self.textFieldLeft.text = [self.textFieldLeft.text stringByAppendingString:self.predictedString];
             
             NSString *actorEntryLeft = self.textFieldLeft.text;
-            [[LocalActors sharedInstance] setActorOne:actorEntryLeft];
+            [[LocalData sharedInstance] setLocalActorOne:actorEntryLeft];
             
             [self.textFieldLeft resignFirstResponder];
             [self.textFieldRight becomeFirstResponder];
@@ -96,7 +94,7 @@ static const int labelRightTag = 1002;
             self.textFieldRight.text = [self.textFieldRight.text stringByAppendingString:self.predictedString];
             
             NSString *actorEntryRight = self.textFieldRight.text;
-            [[LocalActors sharedInstance] setActorTwo:actorEntryRight];
+            [[LocalData sharedInstance] setLocalActorTwo:actorEntryRight];
             
             [self.textFieldRight resignFirstResponder];
         }

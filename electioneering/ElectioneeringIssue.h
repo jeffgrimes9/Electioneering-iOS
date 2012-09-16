@@ -1,5 +1,5 @@
 //
-//  LocalActors.h
+//  ElectioneeringIssue.h
 //  electioneering
 //
 //  Created by Jeff Grimes on 9/15/12.
@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LocalActors : NSObject
+@interface ElectioneeringIssue : NSObject
 
+@property (nonatomic, retain) NSString *issueName;
 @property (nonatomic, retain) NSString *actorOne;
 @property (nonatomic, retain) NSString *actorTwo;
+@property (nonatomic, retain) NSString *color;
 
-+ (id)sharedInstance;
+- (id)initWithDict:(NSDictionary *)dict;
 
 @end
