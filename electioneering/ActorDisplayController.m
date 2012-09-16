@@ -17,12 +17,12 @@
 @property (nonatomic, retain) NSMutableArray *cellDividers;
 @property (nonatomic, retain) NSMutableArray *cellLeftDetails;
 @property (nonatomic, retain) NSMutableArray *cellRightDetails;
+@property (nonatomic, assign) int numberOfCells;
 
 @end
 
 static const int cellHeight = 55;
 static const int cellSpacing = 2;
-static const int numberOfCells = 12;
 
 @implementation ActorDisplayController
 
@@ -47,7 +47,6 @@ static const int numberOfCells = 12;
     self.scrollView.delegate = self;
     self.scrollView.scrollEnabled = YES;
     [self.scrollView setFrame:CGRectMake(0, 34, self.view.frame.size.width, self.view.frame.size.height - 34)];
-    self.scrollView.contentSize = CGSizeMake(480, 682); // 682 = 12*55 (cell height) + 11*2 (spacing between cells)
     
     NSString *fontName = @"Franchise-Bold";
     int fontSize = 32;
@@ -59,12 +58,16 @@ static const int numberOfCells = 12;
 }
 
 - (void)gotData {
+    self.numberOfCells = self.electioneeringAPI.responseArray.count;
+    int contentHeight = self.numberOfCells*cellHeight + (self.numberOfCells - 1)*cellSpacing;
+    self.scrollView.contentSize = CGSizeMake(480, contentHeight);
+    [[LocalData sharedInstance] clearIssues];
     for (NSDictionary *dict in self.electioneeringAPI.responseArray) {
         ElectioneeringIssue *issue = [[ElectioneeringIssue alloc] initWithDict:dict];
         [[[LocalData sharedInstance] issues] addObject:issue];
     }
     [self addData];
-    for (int i = 0; i < numberOfCells; i++) {
+    for (int i = 0; i < self.numberOfCells; i++) {
         [self addTitleLabel:i firstTime:YES];
     }
     
@@ -80,7 +83,7 @@ static const int numberOfCells = 12;
     CGPoint tapPoint = [sender locationInView:self.scrollView];
     int tapY = tapPoint.y;
     int tapIndex;
-    for (int i = 0; i < numberOfCells; i++) {
+    for (int i = 0; i < self.numberOfCells; i++) {
         int yTop = i * (cellHeight + cellSpacing);
         int yBottom = yTop + cellHeight + cellSpacing;
         if (tapY >= yTop && tapY <= yBottom) {
@@ -163,7 +166,7 @@ static const int numberOfCells = 12;
 
 - (void)addData {
     int yVal = 0;
-    for (int i = 0; i < numberOfCells; i++) {
+    for (int i = 0; i < self.numberOfCells; i++) {
         NSString *backgroundImageName;
         if ([[[LocalData sharedInstance] issues] count] <= i) {
             backgroundImageName = @"barBlue.png";

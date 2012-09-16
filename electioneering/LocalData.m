@@ -49,4 +49,8 @@ static LocalData *sharedInstance = nil;
     }
 }
 
+- (void)clearIssues {
+    self.issues = [[NSMutableArray alloc] init];
+}
+
 @end
