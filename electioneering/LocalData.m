@@ -25,7 +25,7 @@ static LocalData *sharedInstance = nil;
         self.selectionStates = [[NSMutableArray alloc] init];
         self.allActors = [[NSMutableArray alloc] init];
         
-        for (int i = 0; i < 14; i++) {
+        for (int i = 0; i < 12; i++) {
             [self.selectionStates addObject:@"title"];
         }
     }
@@ -39,6 +39,13 @@ static LocalData *sharedInstance = nil;
         [self.selectionStates insertObject:@"details" atIndex:index];
     } else {
         [self.selectionStates insertObject:@"title" atIndex:index];
+    }
+}
+
+- (void)resetSelectionStates {
+    for (int i = 0; i < self.selectionStates.count; i++) {
+        [self.selectionStates removeObjectAtIndex:i];
+        [self.selectionStates insertObject:@"title" atIndex:i];
     }
 }
 

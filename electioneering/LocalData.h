@@ -18,5 +18,6 @@
 
 + (id)sharedInstance;
 - (void)changeSelectionStateAtIndex:(int)index;
+- (void)resetSelectionStates;
 
 @end

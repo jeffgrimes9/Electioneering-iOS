@@ -11,8 +11,8 @@
 @interface ElectioneeringIssue : NSObject
 
 @property (nonatomic, retain) NSString *issueName;
-@property (nonatomic, retain) NSString *actorOne;
-@property (nonatomic, retain) NSString *actorTwo;
+@property (nonatomic, retain) NSString *actorOneStance;
+@property (nonatomic, retain) NSString *actorTwoStance;
 @property (nonatomic, retain) NSString *color;
 
 - (id)initWithDict:(NSDictionary *)dict;

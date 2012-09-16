@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "DOAutocompleteTextField/DOAutocompleteTextField.h"
+#import "ElectioneeringAPI.h"
 
-@interface ActorEntryController : UIViewController <UITextFieldDelegate>
+@interface ActorEntryController : UIViewController <UITextFieldDelegate, ActorProtocol>
 
+@property (nonatomic, retain) ElectioneeringAPI *electioneeringAPI;
 @property (nonatomic, retain) IBOutlet UIButton *compareButton;
 @property (nonatomic, retain) IBOutlet DOAutocompleteTextField *textFieldLeft;
 @property (nonatomic, retain) IBOutlet DOAutocompleteTextField  *textFieldRight;

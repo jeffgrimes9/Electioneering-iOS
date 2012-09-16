@@ -28,6 +28,7 @@
 @property (nonatomic, assign) SEL successSelector;
 @property (nonatomic, assign) SEL failureSelector;
 
++ (id)sharedInstance;
 - (void)getDataForActorOne:(NSString *)actorOneId actorTwo:(NSString *)actorTwoId;
 - (void)getAllActors;
 

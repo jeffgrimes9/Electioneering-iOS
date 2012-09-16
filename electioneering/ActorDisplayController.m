@@ -8,6 +8,7 @@
 
 #import "ActorDisplayController.h"
 #import "LocalData.h"
+#import "ElectioneeringIssue.h"
 
 @interface ActorDisplayController ()
 
@@ -21,12 +22,18 @@
 
 static const int cellHeight = 55;
 static const int cellSpacing = 2;
-static const int numberOfCells = 14;
+static const int numberOfCells = 12;
 
 @implementation ActorDisplayController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.electioneeringAPI = [ElectioneeringAPI sharedInstance];
+    self.electioneeringAPI.dataDelegate = self;
+    NSString *actorOne = [[LocalData sharedInstance] localActorOne];
+    NSString *actorTwo = [[LocalData sharedInstance] localActorTwo];
+    [self.electioneeringAPI getDataForActorOne:actorOne actorTwo:actorTwo];
     
     self.cells = [[NSMutableArray alloc] init];
     self.cellLabels = [[NSMutableArray alloc] initWithObjects:[[UILabel alloc] init], [[UILabel alloc] init], [[UILabel alloc] init], [[UILabel alloc] init], [[UILabel alloc] init], [[UILabel alloc] init], [[UILabel alloc] init], [[UILabel alloc] init], [[UILabel alloc] init], [[UILabel alloc] init], [[UILabel alloc] init], [[UILabel alloc] init], [[UILabel alloc] init], [[UILabel alloc] init], nil];
@@ -40,7 +47,7 @@ static const int numberOfCells = 14;
     self.scrollView.delegate = self;
     self.scrollView.scrollEnabled = YES;
     [self.scrollView setFrame:CGRectMake(0, 34, self.view.frame.size.width, self.view.frame.size.height - 34)];
-    self.scrollView.contentSize = CGSizeMake(480, 796); // 796 = 14*55 (cell height) + 13*2 (spacing between cells)
+    self.scrollView.contentSize = CGSizeMake(480, 682); // 682 = 12*55 (cell height) + 11*2 (spacing between cells)
     
     NSString *fontName = @"Franchise-Bold";
     int fontSize = 32;
@@ -49,11 +56,24 @@ static const int numberOfCells = 14;
     self.actorLabelRight.font = [UIFont fontWithName:fontName size:fontSize];
     self.actorLabelLeft.text = [[LocalData sharedInstance] localActorOne];
     self.actorLabelRight.text = [[LocalData sharedInstance] localActorTwo];
-    
+}
+
+- (void)gotData {
+    for (NSDictionary *dict in self.electioneeringAPI.responseArray) {
+        ElectioneeringIssue *issue = [[ElectioneeringIssue alloc] initWithDict:dict];
+        [[[LocalData sharedInstance] issues] addObject:issue];
+    }
     [self addData];
     for (int i = 0; i < numberOfCells; i++) {
         [self addTitleLabel:i firstTime:YES];
     }
+    
+    [[LocalData sharedInstance] resetSelectionStates];
+}
+
+- (void)gotDataError {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Server Error" message:@"There was an error when the app tried to call the Electioneering server." delegate:self cancelButtonTitle:@"Back" otherButtonTitles: nil];
+    [alertView show];
 }
 
 - (void)tapAction:(UITapGestureRecognizer *)sender {
@@ -73,14 +93,19 @@ static const int numberOfCells = 14;
         [[self.cellLabels objectAtIndex:tapIndex] removeFromSuperview];
         UILabel *issueDetailsLeft = [[UILabel alloc] init];
         UILabel *issueDetailsRight = [[UILabel alloc] init];
-        issueDetailsLeft.text = @"Candidate 1's stance";
+        if ([[[LocalData sharedInstance] issues] count] > tapIndex) {
+            issueDetailsLeft.text =[[[[LocalData sharedInstance] issues] objectAtIndex:tapIndex] actorOneStance];
+            issueDetailsRight.text =[[[[LocalData sharedInstance] issues] objectAtIndex:tapIndex] actorTwoStance];
+        } else {
+            issueDetailsLeft.text = @"candidate 1 stance";
+            issueDetailsRight.text = @"candidate 2 stance";
+        }
         issueDetailsLeft.font = [UIFont fontWithName:@"Georgia" size:15];
         issueDetailsLeft.backgroundColor = [UIColor clearColor];
         issueDetailsLeft.textColor = [UIColor whiteColor];
         issueDetailsLeft.textAlignment = UITextAlignmentCenter;
         issueDetailsLeft.numberOfLines = 3;
         issueDetailsLeft.adjustsFontSizeToFitWidth = YES;
-        issueDetailsRight.text = @"Candidate 2's stance";
         issueDetailsRight.font = [UIFont fontWithName:@"Georgia" size:15];
         issueDetailsRight.backgroundColor = [UIColor clearColor];
         issueDetailsRight.textColor = [UIColor whiteColor];
@@ -119,7 +144,11 @@ static const int numberOfCells = 14;
         [[self.cellRightDetails objectAtIndex:index] removeFromSuperview];
     }
     UILabel *issueLabel = [[UILabel alloc] init];
-    issueLabel.text = @"ISSUE TITLE";
+    if ([[[LocalData sharedInstance] issues] count] > index) {
+        issueLabel.text =[[[[LocalData sharedInstance] issues] objectAtIndex:index] issueName];
+    } else {
+        issueLabel.text = @"ISSUE TITLE";
+    }
     issueLabel.font = [UIFont fontWithName:@"Franchise-Bold" size:42];
     issueLabel.backgroundColor = [UIColor clearColor];
     issueLabel.textColor = [UIColor whiteColor];
@@ -135,11 +164,27 @@ static const int numberOfCells = 14;
 - (void)addData {
     int yVal = 0;
     for (int i = 0; i < numberOfCells; i++) {
-        UIImageView *tester = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"barBlue"]];
-        tester.frame = CGRectMake(0, yVal, 480, cellHeight);
-        [self.cells addObject:tester];
-        [self.scrollView addSubview:tester];
-        [tester release];
+        NSString *backgroundImageName;
+        if ([[[LocalData sharedInstance] issues] count] <= i) {
+            backgroundImageName = @"barBlue.png";
+        } else {
+            ElectioneeringIssue *issue = [[[LocalData sharedInstance] issues] objectAtIndex:i];
+            NSString *color = [issue color];
+            if ([color isEqualToString:@"red"]) {
+                backgroundImageName = @"barRed.png";
+            } else if ([color isEqualToString:@"yellow"]) {
+                backgroundImageName = @"barYellow.png";
+            } else if ([color isEqualToString:@"green"]) {
+                backgroundImageName = @"barGreen.png";
+            } else {
+                backgroundImageName = @"barBlue.png";
+            }
+        }
+        UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:backgroundImageName]];
+        background.frame = CGRectMake(0, yVal, 480, cellHeight);
+        [self.cells addObject:background];
+        [self.scrollView addSubview:background];
+        [background release];
         yVal += cellHeight + cellSpacing;
     }
 }

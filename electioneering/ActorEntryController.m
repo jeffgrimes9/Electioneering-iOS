@@ -32,25 +32,31 @@ static const int labelRightTag = 1002;
     self.textFieldLeft.tag = labelLeftTag;
     self.textFieldRight.tag = labelRightTag;
     self.compareButton.enabled = NO;
+    self.electioneeringAPI = [ElectioneeringAPI sharedInstance];
+    self.electioneeringAPI.actorDelegate = self;
+    [self.electioneeringAPI getAllActors];
+}
+
+- (void)gotAllActors {
+    for (NSDictionary *dict in self.electioneeringAPI.responseArray) {
+        NSString *actorName = [dict objectForKey:@"name"];
+        [[[LocalData sharedInstance] allActors] addObject:actorName];
+    }
+}
+
+- (void)gotAllActorsError {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Server Error" message:@"There was an error when the app tried to call the Electioneering server." delegate:self cancelButtonTitle:@"Back" otherButtonTitles: nil];
+    [alertView show];
 }
 
 - (void)modifyNavBar {
     UIImage *logo = [UIImage imageNamed:@"header.png"];
     [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:160/255.0f green:29/255.0f blue:31/255.0f alpha:1.0f]];
-    //[[self.navigationController navigationBar] setBackgroundImage:logo forBarMetrics:UIBarMetricsDefault];
     [logo release];
 }
 
 - (NSString *)textField:(DOAutocompleteTextField *)textField completionForPrefix:(NSString *)prefix {
-    NSArray *autocompleteArray = [NSArray arrayWithObjects:
-                                  @"Barack Obama",
-                                  @"Mitt Romney",
-                                  @"Chris Christie",
-                                  @"Marco Rubio",
-                                  @"Paul Ryan",
-                                  @"Joe Biden",
-                                  @"Bobby Jindal",
-                                  nil];
+    NSArray *autocompleteArray = [NSArray arrayWithArray:[[LocalData sharedInstance] allActors]];
     
     for (NSString *string in autocompleteArray) {
         if ([string hasPrefix:prefix]) {
@@ -107,8 +113,23 @@ static const int labelRightTag = 1002;
 }
 
 - (IBAction)compareButtonPressed {
+    if (![[[LocalData sharedInstance] allActors] containsObject:self.textFieldLeft.text]) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Politician Not Found" message:[NSString stringWithFormat:@"%@ was not found in our database.", self.textFieldLeft.text] delegate:self cancelButtonTitle:@"Back" otherButtonTitles: nil];
+        [alertView show];
+        return;
+    }
     
-    // do this shit ONLY if both names are present in the database (so make api call to get names)
+    if (![[[LocalData sharedInstance] allActors] containsObject:self.textFieldRight.text]) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Politician Not Found" message:[NSString stringWithFormat:@"%@ was not found in our database.", self.textFieldRight.text] delegate:self cancelButtonTitle:@"Back" otherButtonTitles: nil];
+        [alertView show];
+        return;
+    }
+    
+    if ([self.textFieldLeft.text isEqualToString:self.textFieldRight.text]) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Duplicate Entries" message:@"Please enter two different names." delegate:self cancelButtonTitle:@"Back" otherButtonTitles: nil];
+        [alertView show];
+        return;
+    }
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     ActorDisplayController *actorDisplayController = (ActorDisplayController *)[storyboard instantiateViewControllerWithIdentifier:@"displayView"];

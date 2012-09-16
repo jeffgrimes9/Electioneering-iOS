@@ -8,7 +8,16 @@
 
 #import "ElectioneeringAPI.h"
 
+static ElectioneeringAPI *sharedInstance = nil;
+
 @implementation ElectioneeringAPI
+
++ (id)sharedInstance {
+    if (sharedInstance == nil) {
+        sharedInstance = [[ElectioneeringAPI alloc] init];
+    }
+    return sharedInstance;
+}
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     [self.responseData setLength:0];
@@ -19,7 +28,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    // Show error
+    NSLog(@"connection error");
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
@@ -48,22 +57,42 @@
     [self performSelector:self.successSelector];
 }
 
-- (void)getDataForActorOne:(NSString *)actorOneId actorTwo:(NSString *)actorTwoId {
+- (void)getDataForActorOne:(NSString *)actorOne actorTwo:(NSString *)actorTwo {
     self.successSelector = @selector(callGotData);
     self.failureSelector = @selector(callGotDataError);
     
     self.responseData = [[NSMutableData data] retain];
-    NSString *urlString = [NSString stringWithFormat:@"endpoint here %@ %@", @"actorOne", @"actorTwo"];
+    NSString *urlString = [NSString stringWithFormat:@"http://electioneering.us/api/v1/politicians/?names[white]=%@&names[black]=%@&names[auth]=lZvqvJZgXVsYVB43siOl0jsAYNhJXR3Qhnyh4tQlEgSxRi1qxuG7qtXDqjOTk4KN", [actorOne stringByReplacingOccurrencesOfString:@" " withString:@"%20"] , [actorTwo stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+    NSLog(@"%@", urlString);
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
-- (void)callGotData {
-    [self.actorDelegate gotData];
+- (void)getAllActors {
+    self.successSelector = @selector(callGotAllActors);
+    self.failureSelector = @selector(callGotAllActorsError);
+    
+    self.responseData = [[NSMutableData data] retain];
+    NSString *urlString = @"http://electioneering.us/api/v1/politicians/?names[auth]=lZvqvJZgXVsYVB43siOl0jsAYNhJXR3Qhnyh4tQlEgSxRi1qxuG7qtXDqjOTk4KN";
+    NSLog(@"%@", urlString);
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
-- (void)callGotUserError {
-    [self.actorDelegate gotDataError];
+- (void)callGotAllActors {
+    [self.actorDelegate gotAllActors];
+}
+
+- (void)callGotAllActorsError {
+    [self.actorDelegate gotAllActorsError];
+}
+
+- (void)callGotData {
+    [self.dataDelegate gotData];
+}
+
+- (void)callGotDataError {
+    [self.dataDelegate gotDataError];
 }
 
 @end

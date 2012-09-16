@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ElectioneeringAPI.h"
 
-@interface ActorDisplayController : UIViewController <UIScrollViewDelegate>
+@interface ActorDisplayController : UIViewController <UIScrollViewDelegate, DataProtocol>
 
+@property (nonatomic, retain) ElectioneeringAPI *electioneeringAPI;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UILabel *actorLabelLeft;
 @property (nonatomic, retain) IBOutlet UILabel *actorLabelRight;

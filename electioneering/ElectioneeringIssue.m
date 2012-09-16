@@ -13,8 +13,8 @@
 - (id)initWithDict:(NSDictionary *)dict {
     if (self = [super init]) {
         self.issueName = [dict objectForKey:@"issueName"];
-        self.actorOne = [dict objectForKey:@"actorOne"];
-        self.actorTwo = [dict objectForKey:@"actorTwo"];
+        self.actorOneStance = [dict objectForKey:@"whiteStance"];
+        self.actorTwoStance = [dict objectForKey:@"blackStance"];
         self.color = [dict objectForKey:@"color"];
     }
     return self;
