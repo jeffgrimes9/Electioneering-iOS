@@ -79,7 +79,6 @@ static const int labelRightTag = 1002;
             return autocompleteString;
         }
     }
-    
     return @"";
 }
 
