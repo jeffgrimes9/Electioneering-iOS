@@ -114,8 +114,8 @@ static const int numberOfCells = 12;
         issueDetailsLeft.adjustsFontSizeToFitWidth = YES;
         CGRect cellFrame = [[self.cells objectAtIndex:tapIndex] frame];
         int labelY = cellFrame.origin.y;
-        issueDetailsLeft.frame = CGRectMake(5, labelY+2, 230, cellHeight);
-        issueDetailsRight.frame = CGRectMake(245, labelY+2, 230, cellHeight);
+        issueDetailsLeft.frame = CGRectMake(5, labelY+2, 230, cellHeight-5);
+        issueDetailsRight.frame = CGRectMake(245, labelY+2, 230, cellHeight-5);
         
         UIImageView *whiteLine = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"whiteLine.png"]];
         whiteLine.frame = CGRectMake(238, cellFrame.origin.y, 4, cellHeight);
