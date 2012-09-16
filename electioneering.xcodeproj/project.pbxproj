@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01466EF01606242F00AD1B06 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 01466EEF1606242F00AD1B06 /* icon57.png */; };
+		01466EF416062C3D00AD1B06 /* InfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01466EF316062C3D00AD1B06 /* InfoController.m */; };
 		018BE50D16040AD2006DDB46 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018BE50C16040AD2006DDB46 /* UIKit.framework */; };
 		018BE50F16040AD2006DDB46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018BE50E16040AD2006DDB46 /* Foundation.framework */; };
 		018BE51116040AD2006DDB46 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018BE51016040AD2006DDB46 /* CoreGraphics.framework */; };
@@ -36,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		01466EEF1606242F00AD1B06 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
+		01466EF216062C3C00AD1B06 /* InfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoController.h; sourceTree = "<group>"; };
+		01466EF316062C3D00AD1B06 /* InfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoController.m; sourceTree = "<group>"; };
 		018BE50816040AD2006DDB46 /* electioneering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = electioneering.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		018BE50C16040AD2006DDB46 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		018BE50E16040AD2006DDB46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -165,6 +168,8 @@
 				018BE52216040AD2006DDB46 /* ActorEntryController.m */,
 				018BE53816041C08006DDB46 /* ActorDisplayController.h */,
 				018BE53916041C08006DDB46 /* ActorDisplayController.m */,
+				01466EF216062C3C00AD1B06 /* InfoController.h */,
+				01466EF316062C3D00AD1B06 /* InfoController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				018BE5901604CBE4006DDB46 /* DOAutocompleteTextField.m in Sources */,
 				018BE5AE16051832006DDB46 /* ElectioneeringIssue.m in Sources */,
 				018BE5B116051F33006DDB46 /* LocalData.m in Sources */,
+				01466EF416062C3D00AD1B06 /* InfoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

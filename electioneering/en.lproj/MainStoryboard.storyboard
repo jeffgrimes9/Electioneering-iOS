@@ -23,6 +23,36 @@
             </objects>
             <point key="canvasLocation" x="-327" y="-369"/>
         </scene>
+        <!--Info Controller-->
+        <scene sceneID="krX-17-7k3">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OjD-q4-RvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="info" id="Ryn-Tj-M7d" customClass="InfoController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mGD-ez-CLY">
+                        <rect key="frame" x="0.0" y="64" width="480" height="256"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="1ag-bs-g4C">
+                                <rect key="frame" x="0.0" y="-9" width="480" height="273"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="IU9-cr-2Xy">
+                                <rect key="frame" x="219" y="128" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="430" y="-932"/>
+        </scene>
         <!--Actor Entry Controller - Electioneering-->
         <scene sceneID="5">
             <objects>
@@ -169,6 +199,9 @@
         </class>
         <class className="DOAutocompleteTextField" superclassName="UITextField">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DOAutocompleteTextField.h"/>
+        </class>
+        <class className="InfoController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

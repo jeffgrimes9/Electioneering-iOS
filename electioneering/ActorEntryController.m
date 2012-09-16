@@ -9,6 +9,7 @@
 #import "ActorEntryController.h"
 #import "LocalData.h"
 #import "ActorDisplayController.h"
+#import "InfoController.h"
 
 static const int logoTag = 1000;
 static const int labelLeftTag = 1001;
@@ -55,11 +56,17 @@ static const int labelRightTag = 1002;
     [logo release];
     
     UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    [infoButton addTarget:self action:@selector(infoButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [infoButton addTarget:self action:@selector(displayInfo) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
     [self.navigationItem setRightBarButtonItem:modalButton animated:YES];
     [modalButton release];
 
+}
+
+- (void)displayInfo {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    InfoController *infoController = (InfoController *)[storyboard instantiateViewControllerWithIdentifier:@"info"];
+    [self.navigationController pushViewController:infoController animated:YES];
 }
 
 - (NSString *)textField:(DOAutocompleteTextField *)textField completionForPrefix:(NSString *)prefix {

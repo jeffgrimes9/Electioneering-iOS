@@ -8,12 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "electioneering/ActorEntryController.m"
-         timestampString = "369500144.238074"
+         timestampString = "369503450.469601"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "70"
-         endingLineNumber = "70"
-         landmarkName = "-textField:completionForPrefix:"
+         startingLineNumber = "77"
+         endingLineNumber = "77"
+         landmarkName = "-displayInfo"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,12 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "electioneering/ActorEntryController.m"
-         timestampString = "369500144.238074"
+         timestampString = "369503450.469601"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "65"
-         endingLineNumber = "65"
-         landmarkName = "-textField:completionForPrefix:"
+         startingLineNumber = "72"
+         endingLineNumber = "72"
+         landmarkName = "-displayInfo"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -34,12 +34,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "electioneering/ActorEntryController.m"
-         timestampString = "369500144.238074"
+         timestampString = "369503450.469601"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "118"
-         endingLineNumber = "118"
-         landmarkName = "-textField:shouldChangeCharactersInRange:replacementString:"
+         startingLineNumber = "125"
+         endingLineNumber = "125"
+         landmarkName = "-displayInfo"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "electioneering/ActorEntryController.m"
-         timestampString = "369462807.060894"
+         timestampString = "369503450.469601"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "40"
-         endingLineNumber = "40"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
          landmarkName = "-gotAllActors"
          landmarkType = "5">
       </FileBreakpoint>
